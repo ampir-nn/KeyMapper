@@ -111,7 +111,6 @@ class NotificationReceiver : NotificationListenerService(), LifecycleOwner {
         super.onListenerDisconnected()
     }
 
-    override fun getLifecycle(): Lifecycle {
-        return lifecycleRegistry
-    }
+    override val lifecycle: Lifecycle
+        get() = lifecycleRegistry
 }

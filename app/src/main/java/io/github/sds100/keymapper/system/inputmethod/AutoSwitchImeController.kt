@@ -101,6 +101,7 @@ class AutoSwitchImeController(
                     Timber.d("Choose key mapper keyboard because lost input focus")
                     chooseCompatibleIme(imePickerAllowed = false)
                 }
+                else -> Unit
             }
         }.launchIn(coroutineScope)
     }

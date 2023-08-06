@@ -281,7 +281,8 @@ class MyAccessibilityService : AccessibilityService(), LifecycleOwner, IAccessib
         )
     }
 
-    override fun getLifecycle() = lifecycleRegistry
+    override val lifecycle: Lifecycle
+        get() = lifecycleRegistry
 
     override fun hideKeyboard() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
