@@ -112,11 +112,8 @@ class AndroidAppShortcutAdapter @Inject constructor(@ApplicationContext context:
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 
         try {
-            val pendingIntent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                PendingIntent.getActivity(ctx, 0, intent, PendingIntent.FLAG_IMMUTABLE)
-            } else {
-                PendingIntent.getActivity(ctx, 0, intent, 0)
-            }
+            val pendingIntent =
+                    PendingIntent.getActivity(ctx, 0, intent, PendingIntent.FLAG_IMMUTABLE)
 
             pendingIntent.send()
             return Success(Unit)
